@@ -1,43 +1,3 @@
-#' Diagnosis Plot
-#'
-#' Function to construct Diagnosis Plots for HVT Model
-#'
-#' This function creates Diagnosis Plots for HVT Model. The output of the functions contains a Minimum Intra-Centroid distance plot, a Minimum Intra-DataPoint Distance Plot,
-#' Distribution of number of cells,  a Minimum Intra-DataPoint Distance Plot,
-#' Distribution of number of cells and count of singletons(segments with single observation)
-#' 
-#' @param hvt.results A list of hvt.results obtained from HVT function while performing hierarchical vector quantization on train data
-#' @param data Data frame. A data frame with different columns is given as input. The dataframe should be the same dataframe used to train the HVT Model
-#' @param level Numeric. Indicating the level for which the heat map is
-#' to be plotted.
-#' @param quant.err Numeric. A number indicating the quantization error threshold.
-#' @param ... The ellipsis is passed to it as additional argument. (Used internally)
-#' @return A list that contains  a Minimum Inter-Centroid distance plot, a Minimum Intra-DataPoint Distance Plot,
-#' Distribution of number of cells and count of singletons(segments with single observation)
-#' \item{cent_plot }{Plot. a Minimum Intra-Centroid distance plot}
-#'  \item{datapoint_plot }{Plot. a Minimum Intra-Datapoints distance plot} 
-#'  \item{number_plot }{Plot. a Distribution of number of cells} 
-#' \item{singleton_count}{Numeric. Count of singletons(segments with single observation)}
-
-#' @author Shubhra Prakash <shubhra.prakash@@mu-sigma.com>
-#' @seealso \code{\link{predictHVT}}
-#' @keywords hplot
-#' @importFrom magrittr %>%
-#' @import ggplot2
-#' @import dplyr
-#' @examples
-#' data(USArrests)
-#' hvt.results <- list()
-#' hvt.results <- HVT(USArrests, n_cells = 15, depth = 1, quant.err = 0.2, 
-#'                    distance_metric = "L1_Norm", error_metric = "mean",
-#'                    projection.scale = 10, normalize = TRUE,
-#'                    quant_method="kmeans",diagnose=TRUE)
-#'diagPlot(hvt.results = hvt.results,
-#'data = USArrests,
-#'level = 1,
-#'quant.err = 0.2)
-#'
-#' @export diagPlot
 #' @keywords internal
 
 diagPlot <- function(hvt.results,
@@ -166,7 +126,7 @@ diagPlot <- function(hvt.results,
   # browser()
   ####### MAD Plot ################
   predictions_train = list()
-  predictions_train <- predictHVT(
+  predictions_train <- scoreHVT(
     data = data,
     hvt.results.model=hvt.results,
     child.level = level,

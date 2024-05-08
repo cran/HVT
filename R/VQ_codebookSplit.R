@@ -1,3 +1,4 @@
+#' @importFrom utils combn
 requireNamespace("deldir")
 
 # ======================================================================================
@@ -244,7 +245,7 @@ shouldMergeClusters <- function(X, clusters, errorValue) {
 
 mergeClusters <- function(codebooks, clusters, errorValue) {
   # find the index of the centroids that are closest (X)
-  pairs <- t(utils::combn(length(codebooks), 2))
+  pairs <- t(combn(length(codebooks), 2))
 
   tryCatch(
     {
@@ -408,7 +409,7 @@ trilaterate <- function(d) {
 #' quantization error was met. } \item{summary}{ Summary. Output table with
 #' summary. }
 #' @author Sangeet Moy Das <sangeet.das@@mu-sigma.com>
-#' @seealso \code{\link{hvtHmap}}
+#' @seealso \code{\link{plotHVT}}
 #' @examples
 #'
 #'

@@ -6,42 +6,45 @@
 #' deciding an optimal MAD value for the use case.
 #'
 #'
-#' @param hvt.prediction List. A list of hvt.prediction obtained from the predictHVT
+#' @param hvt.scoring List. A list of hvt.scoring obtained from the scoreHVT
 #' function.
 #' @param ... The ellipsis is passed to it as additional argument. (Used internally)
 #' @return Mean Absolute Deviation Plot
 #' \item{mad_plot}{ggplot plot. A plot with percentage anomalies on y axis and mean absolute deviation values on xaxis. }
 #' @author Shubhra Prakash <shubhra.prakash@@mu-sigma.com>
-#' @seealso \code{\link{predictHVT}}
+#' @seealso \code{\link{scoreHVT}}
 #' @importFrom magrittr %>%
 #' @import ggplot2
 #' @examples
-#' data(USArrests)
-#' #Split in train and test
-#'
-#' train <- USArrests[1:40,]
-#' test <- USArrests[41:50,]
-#'
-#' hvt.results <- list()
-#' hvt.results <- HVT(train, n_cells = 15, depth = 1, quant.err = 0.2,
-#'                    distance_metric = "L1_Norm", error_metric = "mean",
-#'                    projection.scale = 10, normalize = TRUE,
-#'                    quant_method="kmeans",diagnose=TRUE)
-#'
-#' predictions <- predictHVT(test,hvt.results, child.level=2,mad.threshold = 0.2)
-#' print(predictions$scoredPredictedData)
-#' madPlot(hvt.prediction=predictions)
+#' data("EuStockMarkets")
+#' dataset <- data.frame(date = as.numeric(time(EuStockMarkets)),
+#'                      DAX = EuStockMarkets[, "DAX"],
+#'                      SMI = EuStockMarkets[, "SMI"],
+#'                      CAC = EuStockMarkets[, "CAC"],
+#'                      FTSE = EuStockMarkets[, "FTSE"])
+#'#adding this step especially for this function
+#' rownames(EuStockMarkets) <- dataset$date
+# Split in train and test
+#'train <- EuStockMarkets[1:1302, ]
+#'test <- EuStockMarkets[1303:1860, ]
+#'hvt_summary <- list()
+#'hvt_summary<- trainHVT(train,n_cells = 15, depth = 1, quant.err = 0.2,
+#'                       distance_metric = "L1_Norm", error_metric = "mean",
+#'                       projection.scale = 10, normalize = TRUE,seed = 123,
+#'                       quant_method = "kmeans")
+#'score_var <- scoreHVT(test, hvt_summary, child.level = 2, mad.threshold = 0.2)
+#'madPlot(hvt.scoring=score_var)
 #' @export madPlot
 #' @keywords internal
 
-madPlot = function(hvt.prediction,
+madPlot = function(hvt.scoring,
                    ...) {
   # browser()
   requireNamespace("ggplot2")       #deldir function
   requireNamespace("scales")       #deldir function
   
-  qe = hvt.prediction[["predictInput"]][["quant.err"]]
-  df_scored = hvt.prediction[["scoredPredictedData"]]
+  qe = hvt.scoring[["predictInput"]][["quant.err"]]
+  df_scored = hvt.scoring[["scoredPredictedData"]]
   qe_val = df_scored$Quant.Error
   
   

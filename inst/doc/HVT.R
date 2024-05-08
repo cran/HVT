@@ -2,7 +2,7 @@
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
-  out.width = "672px",
+  out.width = "auto",
   out.height = "480px",
   fig.width = 7,
   fig.height = 5,
@@ -11,10 +11,9 @@ knitr::opts_chunk$set(
   dpi = 150
 )
 
-## ----predictlayer_flow,echo=FALSE,warning=FALSE,fig.show='hold',message=FALSE,out.width='90%',fig.height=8,fig.cap='Figure 1:  Heatmap Visualization of a Torus with 900 Cells'----
+## ----predictlayer_flow,echo=FALSE,warning=FALSE,fig.show='hold',message=FALSE,fig.cap='Figure 1:  Heatmap Visualization of a Torus with 900 Cells'----
 knitr::include_graphics('./torus2.png')
 
-## ----mlayer_flow,echo=FALSE,warning=FALSE,fig.show='hold',message=FALSE,out.width='90%',fig.height=8,fig.cap='Figure 2: Flow diagram for predicting based on a sequence of maps using predictLayerHVT()'----
-#knitr::include_graphics('./mlayer1.png')
-knitr::include_graphics('./predictLayerHVT_function.png')
+## ----mlayer_flow,echo=FALSE,warning=FALSE,fig.show='hold',message=FALSE,fig.cap='Figure 2: Data Segregation for scoring based on a sequence of maps using scoreLayeredHVT()'----
+knitr::include_graphics('./scoreLayeredHVT_function.png')
 
