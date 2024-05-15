@@ -1,5 +1,5 @@
-499eb384e9f313619662c89a9ba3e7fd *DESCRIPTION
-4abfc955849998167d93a2a0cb9f5e8c *NAMESPACE
+1cd68d5c812fe9f234f0afa3346a519a *DESCRIPTION
+1b9e8b9e0c25d65ce0c5b8a6630d1a3a *NAMESPACE
 102d19b2f2d85aa7a1aad068d4b6eba0 *R/Add_boundary_points.R
 06c415f4dd9d229e1fade95396d10330 *R/Corrected_Tessellations.R
 5d2702dea9b63afaaf1da32c79d6645a *R/DelaunayInfo.R
@@ -30,11 +30,11 @@ b074ecfff77a3564a78e93c1bc3f29d7 *R/reconcileTransitionProbability.R
 cc2ef29bf2222235f0ecc7190e32e14e *R/scoreHVT.R
 0e7491896772b06bcee48a8cebe2dbec *R/scoreLayeredHVT.R
 4f47138f5e294ec6844558240f2c67f9 *R/trainHVT.R
-d01abae1a2f313153524d95d682148c0 *README.md
+f73f633188a03c8a284758de4e522e69 *README.md
 b4ba514d64408013d8f37be3a1fea860 *build/vignette.rds
 a501dbc8b640ee28a87e65be0ccb6dfa *inst/doc/HVT.R
-8446582b39603e71dafb3e38fc4e2770 *inst/doc/HVT.Rmd
-112a6f1e7d0aca047f0310dd3d8e1e69 *inst/doc/HVT.html
+495e3b7aade4d00b2e569110ef485607 *inst/doc/HVT.Rmd
+176d30dd2c37b16b0c5a37edf55772da *inst/doc/HVT.html
 1f6608849a7d7d96fcafb003100de635 *man/VQ_codebookSplit.Rd
 1ded6e285499c8dcb1402bd5d32cd376 *man/displayTable.Rd
 23703469f29677b8681233df709f98a3 *man/edaPlots.Rd
@@ -56,12 +56,13 @@ aff8eef50dd85f43af2b4ae29b664cf1 *man/removeNovelty.Rd
 5b2f1b92c33f782092cae7b4deb0fe22 *man/trainHVT.Rd
 f28be3625f994c488501886e41ab6c64 *tests/testthat.R
 9bd74f9ee9cdfb695f60d8235f9014bb *tests/testthat/testhvt.R
-8446582b39603e71dafb3e38fc4e2770 *vignettes/HVT.Rmd
+495e3b7aade4d00b2e569110ef485607 *vignettes/HVT.Rmd
 e68bde98ad9964c6f6765d2d73bee58d *vignettes/hvt_result_diag.png
 73033c43676cd62855da131e4aa528d1 *vignettes/hvt_results_list.png
 7626f37b0a890e001083cf275f28ddd1 *vignettes/hvt_results_list_score.png
 cd4f4dc371727ed3dfbb6af90010a293 *vignettes/quant_explainer.png
 21c13b024f4d946cefe4ee283d051687 *vignettes/reference.png
+51075f0a2363599c6e64011a6033da30 *vignettes/sample_dataset/Computers.csv
 b4c44e39e1e94452098930113c0f6ca1 *vignettes/scoreLayeredHVT_function.png
 4c37587e41b99baa46bf13178d0ef7cd *vignettes/scoreLayeredHVT_function_mapA.png
 3d0397cb97a6531e1bdba993c3588b9b *vignettes/scoreLayeredHVT_function_mapB.png

@@ -13,10 +13,10 @@
     *   [<span class="toc-section-number">2.3</span> HVT Scoring Cells with Layers using scoreLayeredHVT ](#hvt-scoring-cells-with-layers-using-scoreLayeredHVT)
     *   [<span class="toc-section-number">2.4</span> Temporal Analysis and Visualization: Leveraging Time Series Capabilities in HVT](#temporal-analysis-and-visualization-leveraging-time-series-capabilities-in-hvt)
 *   [<span class="toc-section-number">3.</span> Version History](#version-history)
-    *   [<span class="toc-section-number">3.3</span> HVT (v24.5.1) | What’s New?](#hvt-(v24.5.1)-whats-new)
+    *   [<span class="toc-section-number">3.3</span> HVT (v24.5.2) | What’s New?](#hvt-(v24.5.2)-whats-new)
     *   [<span class="toc-section-number">3.2</span> HVT (v23.11.02)](#hvt-(v23.11.02))
     *   [<span class="toc-section-number">3.1</span> HVT (v22.12.06)](#hvt-(v22.12.06))
-*   [<span class="toc-section-number">4.</span> Installation of HVT (v24.5.1)](#installation-of-hvt-(v24.5.1))
+*   [<span class="toc-section-number">4.</span> Installation of HVT (v24.5.2)](#installation-of-hvt-(v24.5.2))
 
 
 </div>
@@ -37,9 +37,9 @@ The HVT package is a collection of R functions to facilitate building [topology 
 
 5. **Temporal Analysis and Visualization**: A Collection of new functions that leverages the capacity of the HVT package by analyzing time series data for its underlying patterns, calculation of transitioning probabilities and the visualizations for the flow of data over time.
 
-The HVT package allows creation of visually stunning tessellations, showcasing the power of topology preserving maps. Below is an image depicting a captivating tessellation of a torus, see [vignette](https://htmlpreview.github.io/?https://github.com/Mu-Sigma/HVT/blob/master/vignettes/HVT.html) for more details.
+The HVT package allows creation of visually stunning tessellations, showcasing the power of topology preserving maps. Below is an image depicting a captivating tessellation of a torus, see [vignette](https://nbviewer.org/github/Mu-Sigma/HVT/blob/master/vignettes/HVT_vignette.html) for more details.
 
-<img src="https://github.com/Mu-Sigma/HVT/blob/master/vignettes/torus.png" width="642px" height="440px" />
+<img src="https://github.com/Mu-Sigma/HVT/blob/master/vignettes/torus2.png" width="642px" height="440px" />
 <p class="caption">
 Figure 1: The Voronoi tessellation for layer 1 and number of cells 900 with the heat map overlaid for variable z.
 </p>
@@ -57,7 +57,7 @@ Following are the links to the vignettes for the HVT package:
 
 ## <span class="header-section-number">2.1</span> HVT Vignette
 
-[**HVT Vignette:**](https://github.com/Mu-Sigma/HVT/blob/restructure/vignettes/HVT_vignette.html) Contains descriptions of the functions used for vector quantization and construction of hierarchical voronoi tessellations for data analysis.
+[**HVT Vignette:**](https://nbviewer.org/github/Mu-Sigma/HVT/blob/master/vignettes/HVT_vignette.html) Contains descriptions of the functions used for vector quantization and construction of hierarchical voronoi tessellations for data analysis.
 
 </div>
 
@@ -65,7 +65,7 @@ Following are the links to the vignettes for the HVT package:
 
 ## <span class="header-section-number">2.2</span> HVT Model Diagnostics Vignette
 
-[**HVT Model Diagnostics Vignette:**](https://github.com/Mu-Sigma/HVT/blob/restructure/vignettes/HVT_model_diagnostics_vignette.html) Contains descriptions of functions used to perform model diagnostics and validation for HVT model.
+[**HVT Model Diagnostics Vignette:**](https://htmlpreview.github.io/?https://github.com/Mu-Sigma/HVT/blob/master/vignettes/HVT_model_diagnostics_vignette.html) Contains descriptions of functions used to perform model diagnostics and validation for HVT model.
 
 </div>
 
@@ -73,7 +73,7 @@ Following are the links to the vignettes for the HVT package:
 
 ## <span class="header-section-number">2.3</span> HVT Scoring Cells with Layers using scoreLayeredHVT
 
-[**HVT Scoring Cells with Layers using scoreLayeredHVT :**](https://github.com/Mu-Sigma/HVT/blob/restructure/vignettes/Scoring_Cells_with_Layers_using_scoreLayeredHVT.html) Contains descriptions of the functions used for scoring cells with layers based on a sequence of maps using scoreLayeredHVT.
+[**HVT Scoring Cells with Layers using scoreLayeredHVT :**](https://htmlpreview.github.io/?https://github.com/Mu-Sigma/HVT/blob/master/vignettes/Scoring_Cells_with_Layers_using_scoreLayeredHVT.html) Contains descriptions of the functions used for scoring cells with layers based on a sequence of maps using scoreLayeredHVT.
 
 </div>
 
@@ -81,7 +81,7 @@ Following are the links to the vignettes for the HVT package:
 
 ## <span class="header-section-number">2.4</span> Temporal Analysis and Visualization: Leveraging Time Series Capabilities in HVT
 
-[**Temporal Analysis and Visualization: Leveraging Time Series Capabilities in HVT :**](https://github.com/Mu-Sigma/HVT/blob/restructure/vignettes/HVT_Temporal_Analysis.html) Contains descriptions of the functions used for analyzing time series data and its flow maps.
+[**Temporal Analysis and Visualization: Leveraging Time Series Capabilities in HVT :**](https://nbviewer.org/github/Mu-Sigma/HVT/blob/master/vignettes/HVT_Temporal_Analysis.html) Contains descriptions of the functions used for analyzing time series data and its flow maps.
 
 </div>
 
@@ -91,9 +91,9 @@ Following are the links to the vignettes for the HVT package:
 # <span class="header-section-number">3.</span> Version History 
 
 
-<div id="hvt-(v24.5.1)-whats-new" class="section level2" number="3.1">
+<div id="hvt-(v24.5.2)-whats-new" class="section level2" number="3.1">
 
-## HVT (v24.5.1) 
+## HVT (v24.5.2) 
 
 2nd May, 2024
 
@@ -146,7 +146,7 @@ The `scoreLayeredHVT` function uses these three maps to score the test datapoint
 
 Let us try to understand the steps with the help of the diagram below
 
-<img src="https://github.com/Mu-Sigma/HVT/blob/master/vignettes/predictLayerHVT_function.png" width="672px" height="480px" />
+<img src="https://github.com/Mu-Sigma/HVT/blob/master/vignettes/scoreLayeredHVT_function.png" width="672px" height="480px" />
 <p class="caption">
 Figure 2: Data Segregation for scoring based on a sequence of maps using scoreLayeredHVT()</p>
 
@@ -169,9 +169,9 @@ This version of HVT package offers features for both training an HVT model and e
 
 
 
-<div id="installation-of-hvt-(v24.5.1)" class="section level2" number="4">
+<div id="installation-of-hvt-(v24.5.2)" class="section level2" number="4">
 
-# <span class="header-section-number">4.</span> Installation of HVT (v24.5.1)
+# <span class="header-section-number">4.</span> Installation of HVT (v24.5.2)
 
 <div class="sourceCode" id="cb1">
 
