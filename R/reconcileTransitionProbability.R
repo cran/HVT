@@ -8,8 +8,7 @@
 #' @param  hmap_type Character. ('self_state', 'without_self_state', or 'All')
 #' @return A list of plotly heatmap objects and tables representing the transition probability heatmaps.
 #' @author PonAnuReka Seenivasan <ponanureka.s@@mu-sigma.com>, Vishwavani <vishwavani@@mu-sigma.com>
-#' @seealso \code{\link{trainHVT}} \cr \code{\link{scoreHVT}} 
-#' @keywords Diagnostics_or_Validation
+#' @keywords Timeseries_Analysis
 #' @importFrom magrittr %>%
 #' @import markovchain methods
 #' @examples
@@ -18,7 +17,6 @@
 #'                       SMI = EuStockMarkets[, "SMI"],
 #'                       CAC = EuStockMarkets[, "CAC"],
 #'                       FTSE = EuStockMarkets[, "FTSE"])
-#' 
 #' hvt.results<- trainHVT(dataset,n_cells = 60, depth = 1, quant.err = 0.1,
 #'                        distance_metric = "L1_Norm", error_metric = "max",
 #'                        normalize = TRUE,quant_method = "kmeans")
@@ -26,7 +24,6 @@
 #' cell_id <- scoring$scoredPredictedData$Cell.ID
 #' time_stamp <- dataset$date
 #' dataset <- data.frame(cell_id, time_stamp)
-#' 
 #' reconcileTransitionProbability(dataset, hmap_type = "All", 
 #' cellid_column = "cell_id", time_column = "time_stamp")
 #' @export reconcileTransitionProbability
@@ -73,17 +70,14 @@ reconcileTransitionProbability <- function(df, hmap_type = NULL, cellid_column, 
     )
   
   # Heatmap 2: Transition probability without self-state
-
   raw_data1 <- df
   transition_values1 <- table(raw_data1$Cell.ID[-nrow(raw_data1)], raw_data1$Cell.ID[-1])
   mat1 <- unclass(transition_values1)
   normalized_value1 <- mat1 / rowSums(mat1)
-  
-  # Set probability to 0 for transitions to the same state
-  for (i in 1:nrow(normalized_value1)) {
-    normalized_value1[i, i] <- 0
-  }
 
+  #nullifying self state probabilities 
+  normalized_value1[cbind(1:nrow(normalized_value1), 1:ncol(normalized_value1))] <- 0
+  
   melted_matrix1 <- reshape2::melt(normalized_value1)
   a_df1 <- melted_matrix1 %>% as.data.frame()
   colnames(a_df1) <- c("StateFrom", "StateTo", "Probabilty")
@@ -91,7 +85,7 @@ reconcileTransitionProbability <- function(df, hmap_type = NULL, cellid_column, 
   a_df1$StateFrom <- as.integer(a_df1$StateFrom)
   a_df1$Probabilty <- round(a_df1$Probabilty,4)
   a_df1 <- a_df1 %>% arrange( StateFrom, StateTo)
-  
+    
   hmap2 <- plotly::plot_ly(
     data = a_df1,
     x = ~StateFrom,
@@ -162,7 +156,6 @@ reconcileTransitionProbability <- function(df, hmap_type = NULL, cellid_column, 
       autosize = TRUE
     )
  
-   #browser()
    a_df <- a_df[a_df$Probabilty !=0,]
    a_df <- a_df %>% arrange( StateFrom, StateTo)
   colnames(a_df) <- c("Current_State", "Next_State_manual", "Probability_manual_calculation")
@@ -198,8 +191,7 @@ reconcileTransitionProbability <- function(df, hmap_type = NULL, cellid_column, 
                                                          Probability_markov_function, diff)
   
   
-  #browser()
-  
+
   ############
   self_state_plots <-  plotly::subplot(hmap1, hmap3, shareY = TRUE ) %>%
     plotly::layout(annotations = list(
