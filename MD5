@@ -1,4 +1,4 @@
-90f8419ea95ed3e8c2f8579f342d298f *DESCRIPTION
+b4712da7eb6de92e0e1870989319786c *DESCRIPTION
 a9581bd80ffb5ea039a61e24462fe537 *NAMESPACE
 102d19b2f2d85aa7a1aad068d4b6eba0 *R/Add_boundary_points.R
 06c415f4dd9d229e1fade95396d10330 *R/Corrected_Tessellations.R
@@ -36,11 +36,11 @@ e2603bc3ad9a6f2477bc0fbc741e97e4 *R/plotQuantErrorHistogram.R
 9a50e7db812891fb3c4eb26cd821fd73 *R/scoreLayeredHVT.R
 16404ebc1e446f94a7accfe47dec079d *R/summary.R
 e1020ee926a4f22a19eda96008b76885 *R/trainHVT.R
-1dc363425ef242b0f191117e2c1b137d *README.md
+80d10d712aeafd7da632963ee6d8537b *README.md
 1775be096bfb1010814d4f27442ff5d6 *build/vignette.rds
-04bb1e56da4a8aee4b1d0f2f87adff4e *inst/doc/HVT.R
-b374fdb0152f240b94b5095872a70131 *inst/doc/HVT.Rmd
-cf592b14cd592bc5b38722e6ffc44b47 *inst/doc/HVT.html
+7f1a41ef709e61af080ee1ead3e65969 *inst/doc/HVT.R
+6f513a5bbdb307bef5384e108689cf3b *inst/doc/HVT.Rmd
+7fe875b53d764a4b694d4d955c72373b *inst/doc/HVT.html
 1f6608849a7d7d96fcafb003100de635 *man/VQ_codebookSplit.Rd
 846c4a3210c90fc9963535fd4e222d95 *man/clustHVT.Rd
 36835c76182fc74684e14294ec71f9ac *man/displayTable.Rd
@@ -63,7 +63,7 @@ aff8eef50dd85f43af2b4ae29b664cf1 *man/removeNovelty.Rd
 96e9b7cdf399814ec7582817a5b907e1 *man/trainHVT.Rd
 f28be3625f994c488501886e41ab6c64 *tests/testthat.R
 0ff0321d11c549cf62765e165c076aa2 *tests/testthat/testhvt.R
-b374fdb0152f240b94b5095872a70131 *vignettes/HVT.Rmd
+6f513a5bbdb307bef5384e108689cf3b *vignettes/HVT.Rmd
 20e5b8860fc15e80d4bc7e47f6f25430 *vignettes/pngs/HVT_Summary.png
 33cad4ee17ac42880853e81702a91cda *vignettes/pngs/distance.png
 e68bde98ad9964c6f6765d2d73bee58d *vignettes/pngs/hvt_result_diag.png

@@ -9,7 +9,8 @@ knitr::opts_chunk$set(
   fig.align = "center",
   fig.retina = 1,
   dpi = 150,
-  tangle = TRUE
+  tangle = TRUE,
+  eval=TRUE
 )
 
 ## ----predictlayer_flow,echo=FALSE,warning=FALSE,fig.show='hold',message=FALSE,fig.cap='Figure 1:  Heatmap Visualization of a Torus with 500 Cells'----
