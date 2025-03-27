@@ -9,8 +9,8 @@ knitr::opts_chunk$set(
   fig.align = "center",
   fig.retina = 1,
   dpi = 150,
-  tangle = TRUE,
-  eval=TRUE
+  eval=TRUE,
+  tangle = FALSE
 )
 
 ## ----predictlayer_flow,echo=FALSE,warning=FALSE,fig.show='hold',message=FALSE,fig.cap='Figure 1:  Heatmap Visualization of a Torus with 500 Cells'----
@@ -21,7 +21,7 @@ library(knitr)
 library(kableExtra)
 # Create a data frame with hyperlinks
 vignette_data <- data.frame(
-  Version_Number = c("v18.05.17", "v18.05.17", "v23.05.16", "v23.10.26", "v24.05.16","v24.08.14", "v25.01.01"),
+  Version_Number = c("v18.05.17", "v18.05.17", "v23.05.16", "v23.10.26", "v24.05.16","v24.08.14", "v25.03.01"),
   Vignette_Title = c(
   "<a href='https://nbviewer.org/github/Mu-Sigma/HVT/blob/master/vignettes/HVT_vignette.html' target='_blank'>HVT Vignette</a>",
   "<a href='https://nbviewer.org/github/Mu-Sigma/HVT/blob/master/vignettes/HVT_model_diagnostics_vignette.html' target='_blank'>HVT Model Diagnostics Vignette</a>",
