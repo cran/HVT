@@ -1,4 +1,4 @@
-5e04377613ef02fb3dfb2e9d3e5d4178 *DESCRIPTION
+a150f5b84f95a9c8946df5a02241c9da *DESCRIPTION
 a9581bd80ffb5ea039a61e24462fe537 *NAMESPACE
 102d19b2f2d85aa7a1aad068d4b6eba0 *R/Add_boundary_points.R
 06c415f4dd9d229e1fade95396d10330 *R/Corrected_Tessellations.R
@@ -22,7 +22,7 @@ eeb8590cf1b5b769cd83ac9f1bfe5314 *R/global.R
 695ad58bdac6e0db8b3fb4792ec7d91e *R/hvq.R
 f4ce99aa739afd7af526e6ef6c5da46f *R/madPlot.R
 8867ee3639bd0e1b1cdf989451dd61ae *R/msm.R
-570e3ba90998cd1ac3d4d799bface65e *R/msm_plots.R
+c5df86b7df4a5b1e2e787f98f4502d60 *R/msm_plots.R
 07937a4bb5fb7a2af5e5c0acbb39f47f *R/plotAnimatedFlowmap.R
 389627abc24821204565ca91247363ba *R/plotHVT.R
 0f6518a2ffcf21d55a1a735020c9c10e *R/plotModelDiagnostics.R
@@ -32,15 +32,15 @@ e2603bc3ad9a6f2477bc0fbc741e97e4 *R/plotQuantErrorHistogram.R
 68f35ebf55361628423351f2e275965e *R/plotZscore.R
 66165b3c9c780c17ad77a2ceb1ab2dc4 *R/reconcileTransitionProbability.R
 3e23df4cb86b6fc48ce184b2d926eaf6 *R/removeNovelty.R
-ddde97d5689bda779ef43a475b08a7de *R/scoreHVT.R
+6890afc6d110e8dacc37766d6be79012 *R/scoreHVT.R
 9a50e7db812891fb3c4eb26cd821fd73 *R/scoreLayeredHVT.R
 16404ebc1e446f94a7accfe47dec079d *R/summary.R
-926e68f8e62afb190df045bf44b402a3 *R/trainHVT.R
-55f6b6c540923a55cc36b8a3f6f002ed *README.md
+57a17a028df997fb28e00ad9522d03ed *R/trainHVT.R
+34b47782e221b53709a849d3cb699b65 *README.md
 00b7c4573013646ebc4693076a562062 *build/vignette.rds
 ec588de27c5d521846832e6712419e90 *inst/doc/HVT.R
-7a0e7b1a6299ce76719de94bb7ac144e *inst/doc/HVT.Rmd
-73caad8577cc4acf61e55c245ed8dd5f *inst/doc/HVT.html
+2aa53c6f74ecd7c866883a264958391a *inst/doc/HVT.Rmd
+6ad526b1ade5ecbbdbe85d2cba16429f *inst/doc/HVT.html
 1f6608849a7d7d96fcafb003100de635 *man/VQ_codebookSplit.Rd
 846c4a3210c90fc9963535fd4e222d95 *man/clustHVT.Rd
 36835c76182fc74684e14294ec71f9ac *man/displayTable.Rd
@@ -63,7 +63,7 @@ aff8eef50dd85f43af2b4ae29b664cf1 *man/removeNovelty.Rd
 96e9b7cdf399814ec7582817a5b907e1 *man/trainHVT.Rd
 f28be3625f994c488501886e41ab6c64 *tests/testthat.R
 0ff0321d11c549cf62765e165c076aa2 *tests/testthat/testhvt.R
-7a0e7b1a6299ce76719de94bb7ac144e *vignettes/HVT.Rmd
+2aa53c6f74ecd7c866883a264958391a *vignettes/HVT.Rmd
 20e5b8860fc15e80d4bc7e47f6f25430 *vignettes/pngs/HVT_Summary.png
 33cad4ee17ac42880853e81702a91cda *vignettes/pngs/distance.png
 e68bde98ad9964c6f6765d2d73bee58d *vignettes/pngs/hvt_result_diag.png
