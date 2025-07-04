@@ -1,5 +1,6 @@
-a150f5b84f95a9c8946df5a02241c9da *DESCRIPTION
+dffc687e889db4bbaedda5a3c5fbf115 *DESCRIPTION
 a9581bd80ffb5ea039a61e24462fe537 *NAMESPACE
+460aa55861a336ca420aff7d142330ec *NEWS.md
 102d19b2f2d85aa7a1aad068d4b6eba0 *R/Add_boundary_points.R
 06c415f4dd9d229e1fade95396d10330 *R/Corrected_Tessellations.R
 5d2702dea9b63afaaf1da32c79d6645a *R/DelaunayInfo.R
@@ -23,7 +24,7 @@ eeb8590cf1b5b769cd83ac9f1bfe5314 *R/global.R
 f4ce99aa739afd7af526e6ef6c5da46f *R/madPlot.R
 8867ee3639bd0e1b1cdf989451dd61ae *R/msm.R
 c5df86b7df4a5b1e2e787f98f4502d60 *R/msm_plots.R
-07937a4bb5fb7a2af5e5c0acbb39f47f *R/plotAnimatedFlowmap.R
+e1e7aef48280e22a6ee7f917ee318847 *R/plotAnimatedFlowmap.R
 389627abc24821204565ca91247363ba *R/plotHVT.R
 0f6518a2ffcf21d55a1a735020c9c10e *R/plotModelDiagnostics.R
 3fb3c5e4528cbcb0fd45bfd2fe7780f1 *R/plotNovelCells.R
@@ -36,11 +37,11 @@ e2603bc3ad9a6f2477bc0fbc741e97e4 *R/plotQuantErrorHistogram.R
 9a50e7db812891fb3c4eb26cd821fd73 *R/scoreLayeredHVT.R
 16404ebc1e446f94a7accfe47dec079d *R/summary.R
 57a17a028df997fb28e00ad9522d03ed *R/trainHVT.R
-34b47782e221b53709a849d3cb699b65 *README.md
-00b7c4573013646ebc4693076a562062 *build/vignette.rds
+76e26c6e199fa59430223edc90532782 *README.md
+17ae13da57b1be8009dba2c395103f34 *build/vignette.rds
 ec588de27c5d521846832e6712419e90 *inst/doc/HVT.R
 2aa53c6f74ecd7c866883a264958391a *inst/doc/HVT.Rmd
-6ad526b1ade5ecbbdbe85d2cba16429f *inst/doc/HVT.html
+d7ae72cf21ada632bf85419a240a730e *inst/doc/HVT.html
 1f6608849a7d7d96fcafb003100de635 *man/VQ_codebookSplit.Rd
 846c4a3210c90fc9963535fd4e222d95 *man/clustHVT.Rd
 36835c76182fc74684e14294ec71f9ac *man/displayTable.Rd
@@ -48,7 +49,7 @@ edd27acc3ec3da245b2e33a73acf64a7 *man/edaPlots.Rd
 be0d8b6aa475507751f1f9f3f2b88685 *man/getOptimalCentroids.Rd
 b529817e0468ead82ddb27ef79ab7464 *man/getTransitionProbability.Rd
 8f3011e627bd28eda9c537e6752494b6 *man/msm.Rd
-5f1e06ae1843d6ea9510d3872d39b18b *man/plotAnimatedFlowmap.Rd
+96ec35a7d2384f17c09f1f9b4e0de10f *man/plotAnimatedFlowmap.Rd
 28d35d5a26dcecb2fa4acad0882a17e3 *man/plotHVT.Rd
 f8529660b7d1e20df01c9d80e068df72 *man/plotModelDiagnostics.Rd
 87b98e455981ebd1672fc1d61ee353ff *man/plotNovelCells.Rd
