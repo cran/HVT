@@ -1,10 +1,23 @@
-#' @keywords internal
+#' @name OptimizationResults
+#' @title Table display of all combinations performed in `HVTMSMoptimization`
+#' @description This function helps to tabulate the `HVTMSMoptimization` all iterations
+#' performed (successful and failed combinations)
+#' @param msm_results Dataframe. The `all_results` object of `HVTMSMoptimization` 
+#' output based on a specific mae_metric
+#' @param show_top_global Numeric. To tabulate top n lowest MAE results
+#' @return Table of all iterations will be displayed
+#' @author Vishwavani <vishwavani@@mu-sigma.com>, Nithya <nithya.sn@@mu-sigma.com>
+#' @keywords Hyperparameter_Tuning
+#' @include HVTMSMoptimization.R
+#' @importFrom magrittr %>%
+#' @export OptimizationResults
 
-create_highlighted_results_table <- function(msm_results,
-                                             nclust_filter = NULL,
-                                             show_top_global = NULL,
-                                             color_cell_min = "#d4f6d4",
-                                             color_global_min = "#ffebee") {
+
+OptimizationResults <- function(msm_results,show_top_global = NULL) {
+  
+  color_cell_min = "#d4f6d4"
+  color_global_min = "#ffebee"
+  
   # Check for DT package (in Suggests)
   if (!requireNamespace("DT", quietly = TRUE)) {
     stop("Package 'DT' is required for this function. Install it with: install.packages('DT')",
@@ -31,12 +44,12 @@ create_highlighted_results_table <- function(msm_results,
     )
   
   # Optional nclust filter
-  if (!is.null(nclust_filter)) {
-    df <- dplyr::filter(df, `Number of Cells` %in% nclust_filter)
-  }
-  if (nrow(df) == 0) {
-    return(DT::datatable(data.frame(Message = "No results to display"), rownames = FALSE))
-  }
+  # if (!is.null(nclust_filter)) {
+  #   df <- dplyr::filter(df, `Number of Cells` %in% nclust_filter)
+  # }
+  # if (nrow(df) == 0) {
+  #   return(DT::datatable(data.frame(Message = "No results to display"), rownames = FALSE))
+  # }
   
 
   
