@@ -35,7 +35,7 @@
 #' "mae-only" values (used in HVTMSMoptimization) and "all" (used in direct call, include plots and mae)
 #' @return A list object that contains the forecasting plots and MAE values.
 #' \item{[[1]]}{Simulation plots and MAE values for state and centroids plot} 
-#' \item{[[2]]}{Summary Table, Dendogram plot and Clustered Heatmap when handle_problematic_states is TRUE} 
+#' \item{[[2]]}{Summary Table, Dendrogram plot and Clustered Heatmap when handle_problematic_states is TRUE} 
 #' @author Vishwavani <vishwavani@@mu-sigma.com>, Nithya <nithya.sn@@mu-sigma.com>
 #' @keywords Timeseries_Analysis
 #' @importFrom magrittr %>%
@@ -73,12 +73,13 @@
 #'              time_column = 't')
 #' @export msm
 
+
 msm <- function(state_time_data,
                 forecast_type = "ex-post",
                 initial_state,
                 n_ahead_ante = 10,
                 transition_probability_matrix,
-                num_simulations = 100,
+                num_simulations = 500,
                 trainHVT_results,
                 scoreHVT_results,
                 actual_data = NULL,
@@ -91,6 +92,7 @@ msm <- function(state_time_data,
                 time_column,
                 precomputed_problematic_states = NULL,
                 plot_mode = c("all","mae-only")) {
+
 
   # Global variables for CRAN warnings
   time <- simulation <- median <- sd <- studentized_residuals <- value <- Cell.ID <- cluster <- nearest_neighbor <- NULL
@@ -120,7 +122,6 @@ msm <- function(state_time_data,
       errors <- c(errors, "ERROR: mae_metric must be 'mean', 'median', or 'mode'")
 
 #browser()
-
     # Ex-post validation
     can_plot_states_actual <- FALSE
     if (forecast_type == "ex-post") {
@@ -173,6 +174,7 @@ msm <- function(state_time_data,
   # ============================================================================
   # SIMPLIFIED CLUSTERING
   # ============================================================================
+#browser()
   
   perform_clustering <- function(clustering_data, k, centroid_2d_points) {
     tryCatch({
@@ -191,8 +193,7 @@ msm <- function(state_time_data,
         indices = NULL,
         clusters_k = as.integer(k),
         type = "default",
-        domains.column = NULL
-      )
+        domains.column = NULL)
       
       clusters <- cutree(clust.results$hc, k = k)
       cluster_data <- data.frame(
@@ -239,6 +240,19 @@ msm <- function(state_time_data,
   clustering_data <- (scoreHVT_results$cellID_coordinates) %>% dplyr::select(-Cell.ID)
   centroid_data <- centroid_data[, common_cols]
   
+  
+    
+  # clustering_data <- scoreHVT_results$cellID_coordinates
+  # # Order by Cell.ID and set as rownames before removing
+  # clustering_data <- clustering_data[order(clustering_data$Cell.ID), ]
+  # # Set Cell.ID as row names
+  # rownames(clustering_data) <- clustering_data$Cell.ID
+  # # Remove the Cell.ID column
+  # clustering_data <- dplyr::select(clustering_data, -Cell.ID)
+  # 
+  # 
+  # centroid_data <- centroid_data[, common_cols]
+  
   scored_cells <- unique(scoreHVT_results$cellID_coordinates$Cell.ID)
   transition_cells <- unique(c(transition_probability_matrix$Current_State,
                                transition_probability_matrix$Next_State))
@@ -274,7 +288,8 @@ msm <- function(state_time_data,
   } else {
     problematic_states <- intersect(detected_problematic, scored_cells)
   }
-  
+
+
   # if (called_directly) {
   #   if (length(problematic_states) >= 1) {
   #     message("Problematic states found: ", paste(problematic_states, collapse = ", "))
@@ -389,19 +404,23 @@ msm <- function(state_time_data,
   }
   
   # Adjust initial state
-  initial_state <- adjust_initial_state(initial_state,
-                                        transition_cells,
-                                        problematic_states,
-                                        scored_cells,
-                                        centroid_2d_points,
-                                        cluster_data,
-                                        n_nearest_neighbor)
+  # initial_state <- adjust_initial_state(initial_state,
+  #                                       transition_cells,
+  #                                       problematic_states,
+  #                                       scored_cells,
+  #                                       centroid_2d_points,
+  #                                       cluster_data,
+  #                                       n_nearest_neighbor)
+
   
+    
   # Final validation for problematic states handling
   if (handle_problematic_states && length(problematic_states) > 0) {
     if (is.null(cluster_data)) stop("ERROR: Clustering failed but problematic states exist. Cannot proceed with MSM.")
     # Neighbor availability already validated post-clustering
   }
+
+#
   
   # Run simulations
   simulation_results <- sapply(seq_len(num_simulations), function(sim_index) {
@@ -417,7 +436,9 @@ msm <- function(state_time_data,
   })
   simulation_results <- as.data.frame(simulation_results)
   colnames(simulation_results) <- paste0("Sim_", seq_len(num_simulations))
-  
+
+
+    
   # Add time column
   time_values <- if(forecast_type == "ex-post") {
     if(!is.null(actual_data)) actual_data[[time_column]] else head(state_time_data[[time_column]], n_ahead)
@@ -426,6 +447,8 @@ msm <- function(state_time_data,
   }
   simulation_results$time <- time_values
   
+
+
   # Calculate summary statistics
   simulation_results <- simulation_results %>%
     dplyr::select(time, dplyr::everything()) %>%
@@ -512,11 +535,29 @@ msm <- function(state_time_data,
     plots <- list()
   }
   
+  if (handle_problematic_states && length(problematic_states) > 0) {
+    
+    clust.results.2 <- clustHVT(
+      data = clustering_data,
+      trainHVT_results = trainHVT_results,
+      scoreHVT_results = scoreHVT_results,
+      clustering_method = "ward.D2",
+      indices = NULL,
+      clusters_k = as.integer(k),
+      type = "default",
+      domains.column = NULL,
+      only_dendro = TRUE,
+      highlight_labels =c(problematic_states, all_nearest_neighbors))
+    
+  }
+    
+    
+    
   # Return results
   if(handle_problematic_states) {
     output_list <- list(
       plots = plots,
-      dendogram = clust.results$dendogram,
+      dendrogram = clust.results.2$dendrogram,
       problematic_states_list = stp_list,
       cluster_heatmap = cluster_heatmap,
       problematic_states = problematic_states,
